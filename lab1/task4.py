@@ -9,7 +9,7 @@ def solve(num):
 
     # 661 662 663 664 665 666 667 668 669 670 671 672 673
 
-    for i in range(1, 1000):
+    for _ in range(1000):
         potentially_simple_1 += 1
         potentially_simple_2 -= 1
 
