@@ -1,4 +1,4 @@
-from lab1 import task9
+from lab1 import task10_not_finished
 import time
 
 if __name__ == '__main__':
