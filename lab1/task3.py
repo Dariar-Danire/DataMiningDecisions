@@ -8,13 +8,10 @@ def solve(source_str):
     i = 0
 
     while i < (len(source_str) - 1):
-        a = source_str[i]
-        b = source_str[i + 1]
 
         if i == (len(source_str) - 2) and source_str[i + 1] == source_str[i]:
             cnt += 2
             source_str = source_str.replace((source_str[i] * cnt), source_str[i], 1)
-            print(source_str)
 
         elif source_str[i] in vowels and source_str[i + 1] == source_str[i]:
             cnt += 1
@@ -26,7 +23,6 @@ def solve(source_str):
 
             i -= (cnt - 1)
             cnt = 0
-            print(source_str)
 
         i += 1
 

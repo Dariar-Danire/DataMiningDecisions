@@ -10,4 +10,4 @@ def solve(a : list):
             if type(a[i][j]) == type(contrast):
                 result.append(a[i][j])
 
-    print(tuple(result))
+    return tuple(result)
