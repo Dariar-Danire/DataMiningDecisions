@@ -1,4 +1,5 @@
-from lab1 import task10_not_finished
+from lab1 import task11
+from supporting.vector import Vector
 import time
 
 if __name__ == '__main__':
@@ -42,6 +43,14 @@ if __name__ == '__main__':
     #frac3.print()
     #print('\n')
     #frac4.print()
+
+    # Задача 11
+    #a = Vector(3, -1, -2)
+    #b = Vector(1, 2, -1)
+
+    #result = task11.vector_product(a, b)
+
+    #result.print()
 
 
 
