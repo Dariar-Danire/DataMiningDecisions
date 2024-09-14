@@ -12,5 +12,5 @@
    + [Задача №8](https://github.com/Dariar-Danire/DataMiningDecisions/blob/master/lab1/task8.py)
    + [Задача №9](https://github.com/Dariar-Danire/DataMiningDecisions/blob/master/lab1/task9.py)
    + [Задача №10. Не сделано]()
-   + [Задача №11. В процессе]()
+   + [Задача №11](https://github.com/Dariar-Danire/DataMiningDecisions/blob/master/lab1/task11.py)
    + [Задача №12. Не сделано]()
