@@ -1,5 +1,5 @@
-from lab1 import task11
-from supporting.vector import Vector
+from lab1 import task1
+#from supporting.vector import Vector
 import time
 
 if __name__ == '__main__':
@@ -52,6 +52,18 @@ if __name__ == '__main__':
 
     #result.print()
 
+    # Задачи 1-2
+    try:
+        a = 8
+        b = int(input("Введите любое десятизначное число: "))
 
+        if len(str(b)) < 10 or len(str(b)) > 10:
+            raise Exception("The number must be ten digits!")
+    except Exception as e:
+        print("Error!", repr(e))
+    else:
+        nod = task1.binary_gcd(a, b)
+        print(nod)
 
     print("\nEnd time: ", time.time() - start_time)
+
