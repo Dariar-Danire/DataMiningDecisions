@@ -1,4 +1,4 @@
-from lab1 import task1
+from lab1 import task4
 #from supporting.vector import Vector
 import time
 
@@ -10,8 +10,20 @@ if __name__ == '__main__':
     #task3.solve(str)
 
     # Задача 4
-    #num = int(input("Введите число: "))
-    #task4.solve(num)
+    #try:
+    #    num = int(input("Введите число: "))
+    #    n = int(input("Введите диапазон поиска: "))
+
+    #    prime_num = task4.solve(num, n)
+
+    #    if prime_num == -404:
+    #        raise Exception("A prime number was not found in the specified range!")
+
+    #    print(prime_num)
+
+    #except Exception as e:
+    #    print("Error!", repr(e))
+
 
     # Задача 6
     #A = [[1 + 2j, 5, 2 + 6j, 6.7],
@@ -53,17 +65,20 @@ if __name__ == '__main__':
     #result.print()
 
     # Задачи 1-2
-    try:
-        a = 8
-        b = int(input("Введите любое десятизначное число: "))
+    #try:
+    #    a = 8
+    #    b = int(input("Введите любое десятизначное число: "))
 
-        if len(str(b)) < 10 or len(str(b)) > 10:
-            raise Exception("The number must be ten digits!")
-    except Exception as e:
-        print("Error!", repr(e))
-    else:
-        nod = task1.binary_gcd(a, b)
-        print(nod)
+    #    if len(str(b)) < 10 or len(str(b)) > 10:
+    #        raise Exception("The number must be ten digits!")
+
+    #    nod = task1.binary_gcd(a, b)
+    #    print(nod)
+    #except Exception as e:
+    #    print("Error!", repr(e))
+
+    #str = input("Введите исходную строку: ")
+    #task3.solve(str)
 
     print("\nEnd time: ", time.time() - start_time)
 

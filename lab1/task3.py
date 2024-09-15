@@ -1,29 +1,13 @@
 # Напишите код, заменяющий серию одинаковых гласных в вводимой строке на одну эту гласную.
+from re import sub
+from re import IGNORECASE
 
 def solve(source_str):
-    source_str = source_str.lower()
 
     vowels = ['a', 'e', 'i', 'o', 'u']
-    cnt = 0
-    i = 0
 
-    while i < (len(source_str) - 1):
-
-        if i == (len(source_str) - 2) and source_str[i + 1] == source_str[i]:
-            cnt += 2
-            source_str = source_str.replace((source_str[i] * cnt), source_str[i], 1)
-
-        elif source_str[i] in vowels and source_str[i + 1] == source_str[i]:
-            cnt += 1
-
-        elif source_str[i] in vowels and source_str[i + 1] != source_str[i] and cnt > 0:
-            cnt += 1
-
-            source_str = source_str.replace((source_str[i] * cnt), source_str[i], 1)
-
-            i -= (cnt - 1)
-            cnt = 0
-
-        i += 1
+    for word in vowels:
+        pattern = '[' + word + ']+'
+        source_str = sub(pattern, word, source_str, flags=IGNORECASE)
 
     print(source_str)
