@@ -1,4 +1,4 @@
-from lab1 import task4
+from lab1 import task8
 #from supporting.vector import Vector
 import time
 
