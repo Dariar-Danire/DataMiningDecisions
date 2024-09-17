@@ -1,4 +1,4 @@
-from lab1 import task8
+from lab1 import task1
 #from supporting.vector import Vector
 import time
 
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     #    if len(str(b)) < 10 or len(str(b)) > 10:
     #        raise Exception("The number must be ten digits!")
 
-    #    nod = task1.binary_gcd(a, b)
+    #    nod = task1.gcd_8(b)
     #    print(nod)
     #except Exception as e:
     #    print("Error!", repr(e))
