@@ -8,10 +8,6 @@
 def gcd_8(num2):
     b = str(bin(num2))
 
-    c1 = b[-1]
-    c2 = b[-2:]
-    c3 = b[-3:]
-
     if b[-1] == '1':
         return 1
     elif b[-3:] == '000':

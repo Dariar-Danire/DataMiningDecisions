@@ -7,8 +7,6 @@ def solve(num, n=1000):
     potentially_prime_1 = num
     potentially_prime_2 = num
 
-    # 661 662 663 664 665 666 667 668 669 670 671 672 673
-
     for _ in range(n):
         potentially_prime_1 += 1
         potentially_prime_2 -= 1
@@ -23,7 +21,8 @@ def solve(num, n=1000):
             return potentially_prime_1
         elif b and potentially_prime_2 > 0:
             return potentially_prime_2
-    return -404
+
+    raise Exception("A prime number was not found in the specified range!")
 
 def is_prime(num):
     for i in range(2, int(num ** 0.5) + 1):

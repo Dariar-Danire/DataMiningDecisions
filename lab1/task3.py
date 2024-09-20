@@ -10,4 +10,4 @@ def solve(source_str):
         pattern = '[' + word + ']+'
         source_str = sub(pattern, word, source_str, flags=IGNORECASE)
 
-    print(source_str)
+    return source_str

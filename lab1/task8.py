@@ -9,4 +9,4 @@ def solve(n: int):
         if len(str(num)) > n:
             return cnt
         cnt += 1
-    return -1
+    raise Exception("A number was not found in the specified range!")
