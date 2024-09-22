@@ -1,4 +1,4 @@
-from lab1 import calls
+from lab2 import calls
 import time
 
 if __name__ == '__main__':
