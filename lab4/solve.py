@@ -8,20 +8,19 @@ from dsmltf import gradient_descent, minimize_stochastic
 x = []
 
 # Список коэфициентов, которые в методе Фурье в косинусах и синусах
-# Это 2t выходит
 base = [2 * math.pi * (i / 500) for i in range(500)]
 
 
 # Находит значение аппроксимирующего многочлена в точке base[k] с коэфициентами a
 def furie(k, a):
-    return a[0]+a[1]* math.cos(base[k]) + a[2]* math.sin(base[k])+a[3]* math.cos(2 * base[k])+a[4]* math.sin(2 * base[k])
+    return a[0] + a[1]* math.cos(base[k]) + a[2]* math.sin(base[k]) + a[3]* math.cos(2 * base[k]) + a[4]* math.sin(2 * base[k])
 
-# Функция для обычного градиентного спуска
-# Формула взята по аналогии с функцией f(x) из конспекта лекции
+# Функция ошибок для пакетного градиентного спуска
 def F(a) -> float:
     return sum([(x[i] - furie(i, a)) ** 2 for i in range(500)])
 
-# Формула для стохастического градиентного спуска
+# Функция ошибок для стохастического градиентного спуска
+# Почему здесь без суммы?
 def f(i, a):
     return (x[i]-furie(i,a))**2
 
@@ -29,10 +28,9 @@ def f(i, a):
 def solve():
     n = 500                             # Размерность вектора
     k = 12                              # Мой номер в журнале
-    dt = 2 * math.pi / 1000             # dt
-    L = k / 100                         # L
-    omega = 1000 / k                    # omega
-    #t = [(i * dt) for i in range(n)]    # Временные метки
+    dt = 2 * math.pi / 1000
+    L = k / 100
+    omega = 1000 / k
     global x
 
     x = [0, (-1) ** k * dt]
@@ -42,11 +40,11 @@ def solve():
                  + dt ** 2 * math.sin(omega * dt))
 
     # Методом пакетного градиентного спуска подбобрать номера (частоты) и коэффициенты разложения Фурье из двух гармоник (пять параметров), аппроксимирующего функцию x[i].
-    a_batch = gradient_descent(F, [0]*5)
+    a_batch = gradient_descent(F, [0]*5, 500, 0.05, 0.01, 1e-5)
     time_batch = time()
 
     # Сделать то же самое методом стахастического градиентного спуска
-    a_stochastic = minimize_stochastic(f, [i for i in range(500)], [0]*500, [0]*5)
+    a_stochastic = minimize_stochastic(f, [i for i in range(500)], [0]*500, [0]*5, 1e-2, 1000)
     time_stochastic = time()
 
     # Коэфициенты a_batch и a_stochastic
