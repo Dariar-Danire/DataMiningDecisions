@@ -22,15 +22,15 @@ from dsmltf import scale, log_likelyhood, train_test_split, gradient_descent, ne
 
 # data = [rating, books_plot, genre, author, narrative_style, i_read]
 def solve(data: list):
-    for i in range(30):
+    for i in range(len(data)):
         print(f"{i + 1}. Рейтинг: {data[i][0]}, Сюжет: {data[i][1]}, Автор: {data[i][2]}, Стиль письма: {data[i][3]}, Жанр: {data[i][4]}, Результат: {data[i][5]}")
     print("\n")
 
     k = len(data[0]) - 1  # Количество критериев
 
-    # Готовим данные для регрессии в классической для регрессии форме
+    # Готовим данные в классической для регрессии форме
     x = [[1] + r[:k] for r in data]     # Список для параметров (1 - это коэфициент перед alpha): alpha + beta_0 * a + beta_1 * b + beta_2 * c + beta_3 * epsilon
-    y = [r[k] for r in data]            # Список для результатов (наблюдений): y
+    y = [r[k] for r in data]            # Список для результатов (статус): y
 
     # Прошкалируем данные
     x_scale = scale(x)
