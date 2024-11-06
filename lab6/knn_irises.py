@@ -24,7 +24,7 @@ def solve_irises():
     train_data, test_data, train_labels, test_labels = train_test_split(dataset_data, dataset_labels, 0.33)
 
                             ##### РАБОТАЕМ С ТРЕНИРОВОЧНОЙ ВЫБОРКОЙ #####
-    # Форматируем тестовую выборку в 4-мерный датасет
+    # Форматируем тренировочную выборку в 4-мерный датасет
     dataset_train = [(data_i, label_i) for data_i, label_i in zip(train_data, train_labels)]
 
     # Находим лучшее k
