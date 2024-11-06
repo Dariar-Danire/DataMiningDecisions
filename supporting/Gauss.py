@@ -1,7 +1,5 @@
 import numpy
 
-
-
 def gauss(M, b):
     for k in range(M.shape[0] - 1):
         # поиск строки с максимальным элементом
