@@ -4,9 +4,10 @@
 # Виды ирисов в файле: Iris-setosa, Iris-versicolor, Iris-virginica
 
 from lab6.parseCSVToDataset import parseCSV_Irises
-from lab6.support_methods import find_best_k, test_knn_dataset
+from lab6.support_methods import find_best_k, test_knn_dataset, principal_components
 from random import shuffle
-from dsmltf import knn_classify, principal_components, genser, train_test_split
+from dsmltf import genser, train_test_split
+
 
 def solve_irises():
 
@@ -20,11 +21,11 @@ def solve_irises():
     dataset_data = [i[0] for i in dataset]
     dataset_labels = [i[1] for i in dataset]
 
-    # Делим натренировочную и тестовую выборку
-    train_data, test_data, train_labels, test_labels = train_test_split(dataset_data, dataset_labels, 0.33)
+    # Делим на тренировочную и тестовую выборку
+    train_data, test_data, train_labels, test_labels = train_test_split(dataset_data, dataset_labels, 1/3)
 
                             ##### РАБОТАЕМ С ТРЕНИРОВОЧНОЙ ВЫБОРКОЙ #####
-    # Форматируем тестовую выборку в 4-мерный датасет
+    # Форматируем тренировочную выборку в 4-мерный датасет
     dataset_train = [(data_i, label_i) for data_i, label_i in zip(train_data, train_labels)]
 
     # Находим лучшее k

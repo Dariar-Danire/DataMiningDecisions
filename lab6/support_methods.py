@@ -1,4 +1,10 @@
-from dsmltf import k_neighbours_classify, knn_classify
+import random
+from functools import partial
+from math import sqrt
+
+from dsmltf import k_neighbours_classify, knn_classify, direction, dir_variance, gradient_descent, negate, matrix_mul, \
+    the_first_priciple_comp, turn
+
 
 def find_best_k(dataset, k = 15):
     """
@@ -18,6 +24,7 @@ def find_best_k(dataset, k = 15):
 
     return best_k
 
+
 def test_knn_dataset(dataset, k):
     """
     Находит количество верных предсказаний для переданной выборки
@@ -30,8 +37,8 @@ def test_knn_dataset(dataset, k):
     for data_i in dataset:
         marks, fact_label = data_i[0], data_i[1]
 
-        other_data = [other_item for other_item in dataset
-                      if other_item != data_i]
+        other_data = [other_data for other_data in dataset
+                      if other_data != data_i]
 
         predicted_label = knn_classify(k, other_data, marks)
 
@@ -39,3 +46,19 @@ def test_knn_dataset(dataset, k):
             correct_predictions += 1
 
     return correct_predictions, len(dataset)
+
+
+def principal_components(data, m):
+    res_d = [[] for _ in data]
+    components = []
+
+    for _ in range(m):
+        components.append(the_first_priciple_comp(data))
+        data = turn(data,components[-1])
+
+        for j,dj in enumerate(data):
+            res_d[j].append(dj[0])
+
+        data = [di[1:] for di in data]
+
+    return res_d

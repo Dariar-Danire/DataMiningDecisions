@@ -2,6 +2,7 @@ import csv
 
 # Структура файла: ID,      Длина чашелистика,      Ширина чашелистика,     Длина лепестка,     Ширина лепестка,    Вид ириса
 # Структура файла: ID,      SepalLengthCm (0),      SepalWidthCm (1),       PetalLengthCm (2),  PetalWidthCm (3),   Species
+
 def parseCSV_Irises(path_to_file) -> list:
     f = open(path_to_file)
     dataset = []
@@ -15,6 +16,7 @@ def parseCSV_Irises(path_to_file) -> list:
 
     return dataset
 
+
 def parseCSV_Earthquaces(path_to_file) -> list:
     f = open(path_to_file)
     dataset = []
@@ -26,5 +28,4 @@ def parseCSV_Earthquaces(path_to_file) -> list:
         except:
             continue
 
-    print(f"max_latitude: {max_latitude}, max_longitude: {max_longitude}")
     return dataset

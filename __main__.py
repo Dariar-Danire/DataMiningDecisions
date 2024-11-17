@@ -1,9 +1,9 @@
-from lab6 import call
+from lab7 import task
 import time
 
 if __name__ == '__main__':
     start_time = time.time()
 
-    call.knn_for_six_lab()
+    task.solve()
 
-    print("\nEnd time: ", time.time() - start_time)
+    print("\nЗатрачено времени: ", time.time() - start_time)
