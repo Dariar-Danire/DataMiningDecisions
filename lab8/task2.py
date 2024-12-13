@@ -37,6 +37,7 @@ def solve():
         ({'level': 'Senior', 'lang': 'PHP', 'tweets': 'yes', 'phd': 'no'}, False),
         ({'level': 'Mid', 'lang': 'PHP', 'tweets': 'no', 'phd': 'yes'}, True),
         ({'level': 'Junior', 'lang': 'PHP', 'tweets': 'yes', 'phd': 'no'}, False),
+
         ({'level': 'Senior', 'lang': 'Java', 'tweets': 'yes', 'phd': 'no'}, True),
         ({'level': 'Mid', 'lang': 'Java', 'tweets': 'no', 'phd': 'no'}, False),
         ({'level': 'Junior', 'lang': 'Java', 'tweets': 'yes', 'phd': 'yes'}, True),
@@ -44,6 +45,9 @@ def solve():
         ({'level': 'Mid', 'lang': 'C++', 'tweets': 'yes', 'phd': 'no'}, True),
     ]
 
+    print(f"Количество записей в датасете: {len(dataset)}")
+
+    # Делим на тренировочную и тестовую выборки
     train_dataset, test_dataset = train_test_dataset_split(dataset)
 
     # Строим ДПР (Дерево Принятия Решений)
